@@ -32,3 +32,19 @@ selectProduct.addEventListener("change",async () => {
 
 
 
+//Módulo percentage bar
+const scrollBar = document.getElementById("scroll-bar");
+
+window.addEventListener("scroll", () => {
+  let percent = calcPercentage();  
+  scrollBar.style.width = `${percent}%`;
+});
+
+function calcPercentage() {
+    let scrollTop = window.scrollY;
+    let docHeight = document.body.offsetHeight;
+    let winHeight = window.innerHeight;
+    let scrollPercent = scrollTop / (docHeight - winHeight);
+    let percent = Math.round(scrollPercent * 100);
+    return percent;
+}

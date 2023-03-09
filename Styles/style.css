@@ -21,7 +21,6 @@ body {
 #header-container {
   background-color: var(--section-bg-color);
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   position: fixed;
@@ -32,7 +31,7 @@ body {
 }
 
 #logo {
-  margin: 0;
+  margin: 0 auto;
   font-family: "Raleway";
   font-size: 32px;
   font-weight: 300;
@@ -104,15 +103,14 @@ body {
   width: 100%;
   background-color: var(--oxygen-blue);
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "item item item" "item item item" "item item item" "item item item";
+  grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(25%, 1fr));
   justify-items: center;
-  row-gap: 2%;
+  row-gap: 2em;
 }
 
 .item {
-  margin: 5%;
+  margin: 10%;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -182,4 +180,11 @@ body {
 
 #social-media {
   margin-right: 10%;
+}
+
+@media screen and (max-width: 1000px) {
+  #item-cards {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+  }
 }/*# sourceMappingURL=style.css.map */
