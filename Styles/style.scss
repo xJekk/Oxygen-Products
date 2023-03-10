@@ -28,20 +28,41 @@ body {
 /*Módulo header*/
 #header-container {
   background-color: var(--section-bg-color);
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  position: fixed;
-  width: 100%;
-  height: 70px;
-  z-index: 1;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+    box-shadow: rgb(0 0 0 / 29%) 0px 3px 6px;
+  
 }
 
 #logo {
-  margin: 0 auto;
+  margin: 0 2em;
   @include fonts("Raleway", 32px, 300);
   color: var(--oxygen-blue);
+}
+
+#cart {
+  width: 15%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cart-count {
+  @include fonts("Raleway", 20px, 300);
+  color: var(--oxygen-blue);
+}
+
+#cart img {
+  margin-right: 1em;
+  width: 50px;
+  height: 40px;
 }
 
 //Barra porcentaje de la página
@@ -61,11 +82,19 @@ body {
   grid-template-areas: "shop-menu item-cards";
 }
 
-#shop-menu {
+#category-list {
   background-color: var(--general-bg-color);
+  font-family: "Raleway";
+  font-size: 16px;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.category-list-ul{
+  list-style: none;
+  padding:0;
 }
 
 .test-container {
@@ -108,7 +137,7 @@ body {
 #item-cards {
   margin-top: 20px;
   width: 100%;
-  background-color: var(--oxygen-blue);
+  background-color: var(--section-bg-color);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(25%, 1fr));
@@ -128,7 +157,7 @@ body {
   align-items: center;
   justify-content: space-evenly;
   background-color: var(--section-bg-color);
-  border: 1px solid black;
+  border: 1px solid var(--oxygen-blue);
   border-radius: 15px;
   text-align: center;
 }
@@ -137,7 +166,6 @@ body {
   font-family: "Raleway";
   font-size: 30px;
   font-weight: 700;
-  color: var(--card-blue);
   padding: 0 5%;
 }
 
@@ -158,6 +186,24 @@ body {
 .item img {
   width: 60%;
   margin: 20px 0;
+}
+
+.add-btn {
+  margin-bottom: 20px;
+  border-radius: 40px;
+  width: 55%;
+  max-width: 150px;
+  height: 2.5em;
+  border: 0;
+  background: var(--oxygen-blue);
+  color: var(--section-bg-color);
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.add-btn:hover {
+  cursor: pointer;
 }
 
 /*Contenedor footer*/
