@@ -1,3 +1,21 @@
+let onlineCart  = { //no una clase porque sólo hay 1 carrito
+    products: [],
+    total: 0.0,
+
+    getTotal () {
+        this.products.forEach((product) => {
+            this.total = Number(product.price) + Number(this.total);
+        })
+        return Math.round(this.total);
+    },
+    addProduct(product){
+        this.products.push(product);
+    },
+    getProductsNumber(){
+        return this.products.length;
+    }
+}
+
 async function loadProducts(numProducts) {
     try{
         let url = `https://fakerapi.it/api/v1/products?_quantity=${numProducts}&_taxes=12&_categories_type=string`;
